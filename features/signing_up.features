@@ -1,0 +1,14 @@
+Feature: Signing up
+  
+  Scenario: Unsuccessful signup
+    Given a user visits the signup page
+    When he submits invalid signup information
+    Then he should see an error message
+  
+  Scenario: Successful signup
+    Given a user visits the signup page
+      And the user not has account
+      And the user submits valid signup information
+    Then he should see a welcome message
+    	And he should see his profile page
+      And he should see a signout link
